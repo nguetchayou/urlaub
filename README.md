@@ -19,3 +19,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Use
+you must register
+there are two types of account. Normal or Admin: You just have to select the appropriate status.
+* Normal: this person can make a request for holiday, modify it, delete it, but not validate it.
+* Admin: this person can make a request for holiday, modify it, delete it and validate every holiday's request.
