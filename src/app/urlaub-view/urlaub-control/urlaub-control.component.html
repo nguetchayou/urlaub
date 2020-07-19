@@ -1,0 +1,30 @@
+<h2 style="margin-left:1vw; margin-bottom: 1vw">Liste aller Urlaubsanträge</h2>
+<div *ngFor="let urlaubantrag of urlaubsantraege; let i = index">
+  <div *ngIf="userVerbunden">
+    <div class="antragview" *ngIf="urlaubantrag.eingereicht === true && userVerbunden.status === 'admin'"
+         [ngClass]="{'antragviewOk': urlaubantrag.eingereicht === true && urlaubantrag.genehmigt === false,
+      'antragviewGenemigt': urlaubantrag.genehmigt === true}">
+      <div class="antragContent">
+        <div class="antragLeft">
+          <p>{{urlaubantrag.name}}</p>
+          <p>Anzahl der Urlaubstage (aktuelle Jahr): {{usersList[findUserIndex(i)].anzahlUrlaubstage}}</p>
+          <p>Anzahl der Resturlaubstage (von Vorjahr): {{urlaubantrag.resturlaubstage}}</p>
+          <p>Anzahl verbleibender Urlaubstage: {{usersList[findUserIndex(i)].verbleibender}}</p>
+          <p>Anzahl beantragter Urlaubstage: {{usersList[findUserIndex(i)].beantragterUrlaub}}</p>
+        </div>
+        <div class="antragRight">
+          <p>{{urlaubantrag.urlaubBeginn}} -- {{urlaubantrag.urlaubsende}}</p>
+          <p>Anzahl Urlaubstage: {{urlaubantrag.urlaubstageAntrag}}</p>
+          <p>Sonderurlaub: {{urlaubantrag.sonderurlaub === true ? 'Ja' : 'nein'}}</p>
+          <p>Urlaubsantrag eingereicht: {{urlaubantrag.eingereicht === true ? 'Ja' : 'nein'}}</p>
+          <p>Urlaubsantrag genehmigt: {{urlaubantrag.genehmigt === true ? 'Ja' : 'nein'}}</p>
+        </div>
+      </div>
+      <button *ngIf="urlaubantrag.genehmigt === false"
+              class="btn-bearbeiten" (click)="ablehnen(i)">ablehnen</button>
+      <button *ngIf="urlaubantrag.genehmigt === false"
+              (click)="genehmigt(i)" class="btn-senden">genehmigt</button>
+    </div>
+  </div>
+
+</div>

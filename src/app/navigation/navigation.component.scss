@@ -1,0 +1,29 @@
+.navigation {
+  border-bottom: 3px solid #444444;
+  box-shadow: 1px 4px 4px 4px #444444;
+  color: white;
+  background-color: black;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.login:nth-child(2) {
+  align-self: flex-end;
+}
+a {
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 450px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  a {
+    margin: 12px;
+  }
+}

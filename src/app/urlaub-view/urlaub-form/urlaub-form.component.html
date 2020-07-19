@@ -1,0 +1,40 @@
+
+<div class="antrag">
+  <h2 style="margin-bottom: 1vw">Neuer Urlaubsantrag</h2>
+  <form [formGroup]="urlaubForm" >
+    <div class="info" *ngIf="userVerbunden">
+      <p>{{userVerbunden.vorname}}, {{userVerbunden.nachname}}</p>
+      <p>Anzahl der Urlaubstage (aktuelles Jahr): {{userVerbunden.anzahlUrlaubstage}}</p>
+      <p>Anzahl verbleibender Urlaubstage (aktuelles Jahr): {{userVerbunden.verbleibender}}</p>
+      <p>Anzahl beantragter Urlaubstage: {{userVerbunden.beantragterUrlaub}}</p>
+    </div>
+    <p>
+      <label for="resturlaub">Resturlaub<span> *</span>:</label>
+      <input type="text" id="resturlaub" formControlName="resturlaub" placeholder="nur ganzzahlen">
+    </p>
+    <p>
+      <label for="urlaubsbeginn">Urlaubsbeginn<span> *</span>:</label>
+      <input type="text" id="urlaubsbeginn" formControlName="urlaubsbeginn" placeholder="TT/MM/JJJJ">
+    </p>
+    <p style="color: #ff8888" *ngIf="errorMessageBeginn">{{errorMessageBeginn}}</p>
+    <p>
+      <label for="urlaubsende">Urlaubsende<span> *</span>:</label>
+      <input type="text" id="urlaubsende" formControlName="urlaubsende" placeholder="TT/MM/JJJJ">
+    </p>
+    <p style="color: #ff8888" *ngIf="errorMessageEnde">{{errorMessageEnde}}</p>
+    <p>
+      <label for="urlaubstage">Anzahl Urlaubstage<span> *</span>:</label>
+      <input type="text" id="urlaubstage" formControlName="urlaubstage" placeholder="nur ganzzahlen">
+    </p>
+    <p style="color: #ff8888" *ngIf="errorMessageUrlaubstage">{{errorMessageUrlaubstage}}</p>
+    <p>
+      <label for="sonderurlaub">Sonderurlaub<span> *</span>:</label>
+      <select name="sonderurlaub" id="sonderurlaub" formControlName="sonderurlaub">
+        <option value="ja">Ja</option>
+        <option value="nein">Nein</option>
+      </select>
+    </p>
+    <input type="submit" (click)="urlaubSubmit()" value="senden" [disabled]="urlaubForm.invalid"/>
+    <button (click)="onSaveAntrag()" [disabled]="urlaubForm.invalid">speichern</button>
+  </form>
+</div>

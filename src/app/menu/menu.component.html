@@ -1,0 +1,10 @@
+<div class="menu" *ngIf="isAuth" >
+  <ul *ngIf="userVerbunden" >
+    <li routerLink="/antrag/view">Meine Urlaubsanträge</li>
+    <li routerLink="/antrag/new">Neue Urlaubantrag</li>
+    <li [routerLink]="'/antrag/view/' + userIndex">Informationen über meine Urlaube</li>
+    <!--<li>Meine eingereichte Urlaube</li>
+    <li>Meine genehmigte Urlaube</li>-->
+    <li routerLink="/antrag/control" *ngIf="userVerbunden.status === 'admin'">Alle  Urlaubsanträge</li>
+  </ul>
+</div>

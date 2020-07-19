@@ -1,0 +1,62 @@
+.antrag {
+  border: 1px solid #dddddd;
+  width: 90vw;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1vw;
+  margin: auto;
+}
+span{
+  color: red;
+}
+h3, p {
+  margin-bottom: 1vw;
+}
+p {
+  display: flex;
+  flex-direction: column;
+}
+input[type=text], select {
+  width: 80vw;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #ededed;
+}
+select {
+  margin-left: 0;
+}
+button, input[type=submit] {
+  padding: 12px;
+  width: 130px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  color: white;
+  background-color: #5555ff;
+  margin-right: 1vw;
+}
+@media only screen and (min-width: 678px) {
+  .antrag {
+    width: 60vw;
+    margin-left: 1vw;
+  }
+  input[type=text], select {
+    width: 50vw;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .antrag {
+    width: 45vw;
+    margin-left: 1vw;
+  }
+  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input[type=text], select {
+    width: 20vw;
+  }
+}

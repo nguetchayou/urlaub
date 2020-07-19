@@ -1,0 +1,16 @@
+<div class="contentRegistrierung">
+  <h2 style="margin-bottom: 1vw">Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+    <p>
+      <label for="email">Email<span> *</span>:</label>
+      <input type="email" id="email" formControlName="email">
+    </p>
+    <p>
+      <label for="passwort">Passwort<span> *</span>:</label>
+      <input type="password" id="passwort" formControlName="passwort">
+    </p>
+    <p style="color: #ff8888">{{errorMessage}}</p>
+    <button (click)="onSubmitLogin()" [disabled]="loginForm.invalid">login</button>
+    <button routerLink="/registrierung" class="btn-registrieren">registrieren</button>
+  </form>
+</div>

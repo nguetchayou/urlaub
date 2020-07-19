@@ -1,0 +1,10 @@
+<div class="navigation">
+  <div class="titel">
+    <h2>Urlaubsanträge</h2>
+  </div>
+  <div class="login">
+    <a *ngIf="!isAuth" routerLink="/login">Login</a>
+    <a *ngIf="!isAuth" routerLink="/registrierung">Registrierung</a>
+    <a *ngIf="isAuth" (click)="abmelden()">abmelden</a>
+  </div>
+</div>

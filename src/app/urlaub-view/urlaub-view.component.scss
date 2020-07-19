@@ -1,0 +1,84 @@
+.antragview {
+  padding: 1vw;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vw;
+  background-color: white;
+  width: 90vw;
+}
+.antragviewNOk {
+  padding: 1vw;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vw;
+  background-color: #ffdddd;
+  width: 90vw;
+}
+.antragviewOk {
+  padding: 1vw;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vw;
+  background-color: #fcffda;
+  width: 90vw;
+}
+.antragviewGenemigt {
+  padding: 1vw;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vw;
+  background-color: #ddffdd;
+  width: 90vw;
+}
+.antragContent {
+  display: flex;
+  flex-direction: column-reverse;
+}
+p {
+  margin-bottom: 6px;
+}
+.btn-bearbeiten, .btn-senden {
+  padding: 12px;
+  margin-right: 12px;
+  margin-top: 1vw;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+.btn-bearbeiten {
+  background-color: #ff8888;
+}
+.btn-bearbeiten:hover {
+  background-color: #ff0000;
+}
+.btn-senden {
+  background-color: #88ff88;
+}
+.btn-senden:hover {
+  background-color: #00ff00;
+}
+
+@media only screen and (min-width: 678px) {
+
+  .antragview, .antragviewNOk, .antragviewOk, .antragviewGenemigt {
+    width: 60vw;
+    margin-left: 1vw;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .antragContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .antragview, .antragviewNOk, .antragviewOk, .antragviewGenemigt {
+    width: 50vw;
+  }
+}
